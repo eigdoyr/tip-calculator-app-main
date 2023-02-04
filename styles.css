@@ -1,0 +1,233 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+0 h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: var(--light-grayish-cyan);
+}
+
+.logo {
+  margin: auto;
+}
+
+.calc-container {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+}
+
+.calc-box-bill {
+  padding: 1rem;
+}
+
+.calc-box-show {
+  background-color: var(--very-dark-cyan);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.box-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.input-container input {
+  width: 100%;
+  text-align: right;
+}
+
+.input-container {
+  display: relative;
+}
+
+i {
+  position: absolute;
+  top: 1;
+  margin: 0.6rem;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.select-tip {
+  display: grid;
+  grid: 1fr 1fr;
+  text-align: center;
+  width: 15rem;
+}
+
+.tip-lbl-style,
+.tip-lbl {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+  margin: 0;
+}
+
+.custom-input,
+.custom,
+.input {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: var(--very-light-grayish-cyan);
+}
+
+.input,
+.custom-input {
+  padding: 1rem;
+}
+
+label,
+legend {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: var(--dark-grayish-cyan);
+}
+
+.bill,
+fieldset,
+.num-people {
+  padding-bottom: 1rem;
+}
+
+.lbl {
+  color: var(--very-light-grayish-cyan);
+  font-size: 0.85rem;
+}
+
+.sub-lbl {
+  color: var(--grayish-cyan);
+  font-size: 0.75rem;
+  margin-top: -1rem;
+}
+
+.tip-amount-text,
+.total-amount-text {
+  color: var(--strong-cyan);
+  font-size: 1.5rem;
+}
+
+.show-total {
+  padding-bottom: 1rem;
+}
+
+.reset-btn {
+  width: 100%;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+input[type="radio"]:checked + .tip-lbl-style {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+@media (width>=1024px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calc-box-show {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
