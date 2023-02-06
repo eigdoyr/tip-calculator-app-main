@@ -1,17 +1,23 @@
-const billInput = document.querySelector("#bill-input");
+let billInput = document.querySelector("#bill-input");
 let tips = document.getElementsByName("tip");
-const customTip = document.querySelector("#custom-input");
+let customTip = document.querySelector("#custom-input");
 let numInput = document.querySelector("#num-inpout");
 let tipAmtTotal = document.querySelector("#tip-amount-text");
 let totalAmtTotal = document.querySelector("#total-amount-text");
-const resetBtn = document.querySelector("#reset-btn");
+let resetBtn = document.querySelector("#reset-btn");
 
-tipAmtTotal.addEventListener("click", () => {
+//Calculate Tip
+const calculateTip = (billInput, selected, numInput) => {
   let selected = Array.from(tips).find((tip) => tip.checked);
-  alert(selected.value);
-});
+  let tipAmount = (billAmount * (tipPercentage / 100)) / numberOfPeople;
+  let tip = Math.floor(tipAmount * 100) / 100;
+  tip = tip.toFixed(2);
+  // console.log("this is tip", tip);
 
-const compute = () => {
-  let selected = Array.from(tips).find((tip) => tip.checked);
-  let totalBill = (billInput.value * selected.value) / numInput.value;
+  let totalAmount = (tipAmount * numberOfPeople + billAmount) / numberOfPeople;
+  totalAmount = totalAmount.toFixed(2);
+  // console.log("this is total amount", totalAmount);
+
+  billAmount.innerHTML = `$${tip}`;
+  billTotalPerPerson.innerHTML = `$${totalAmount}`;
 };
